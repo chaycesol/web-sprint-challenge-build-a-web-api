@@ -1,7 +1,5 @@
 const express = require('express');
 
-
-
 // initializing router
 const router = express.Router()
 

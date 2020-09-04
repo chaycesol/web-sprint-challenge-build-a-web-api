@@ -60,7 +60,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   Actions.remove(req.params.id)
     .then((action) => {
-      res.status(200).json({ message: `records removed ${action}` });
+      res.status(200).json({ message: `action removed with ID ${req.params.id}` });
     })
     .catch((error) => {
       console.log(error);
