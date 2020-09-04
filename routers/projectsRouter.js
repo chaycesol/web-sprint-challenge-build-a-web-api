@@ -68,7 +68,7 @@ router.put('/:id', validateProjectId, (req, res) => {
 })
 
 /* DELETE REQUESTS */
-router.delete('/:id', (req, res) => {
+router.delete('/:id', validateProjectId, (req, res) => {
     Projects.remove(req.params.id)
     .then((deleted) => {
         res.status(201).json({message: `deleted project with id: ${req.params.id}`})
