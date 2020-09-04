@@ -61,10 +61,15 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+    We can now use JavaScript to write command line utilities, native programs that run on different operating systems, networking software, web services, web applications and more. This is useful because we can use JS to write both client and serverside code, can perform async calls, and access to NPM repository. 
 1. Understand and explain the use of Middleware?
+Middleware helps us to handle our req, and res objects so we are able to modify and parse data s needed coming from an API. examples of this are express.json() (built-in), helmet (third-party), and custom functions you can write yourself. 
 1. The basic principles of the REST architectural style.
+ It's stateless, client-server model, layered architecture, with URI's/URL's
 1. Understand and explain the use of Express Routers.
+Express Routers help us to better organize our code and endpoints so that way you don't end up with a server file thats 1000 lines long. This makes our code more DRY, and aids us in debugging anything more quickly.
 1. Describe tooling used to manually test the correctness of an API.
+We use Postman, or Insomnia to check that our API is responding properly, and that all endpoints are working and returning data as expected. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -102,7 +107,7 @@ In your solution, it is essential that you follow best practices and produce cle
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-- [X] Deploy the API to Heroku.
+- [X] Deploy the API to Heroku: https://build-web-api-sprint-challenge.herokuapp.com/
 - [X] Configure the API to support environment variables.
 - [X] Use middleware for validation of incoming data.
 
@@ -110,6 +115,6 @@ After finishing your required elements, you can push your work further. These go
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+- [X] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
+- [X] Add your team lead as a reviewer on the pull-request
+- [X] Your team lead will count the project as complete after receiving your pull-request
