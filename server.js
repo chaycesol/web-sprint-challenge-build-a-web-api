@@ -25,9 +25,9 @@ server.get('/', (req,res) => {
     res.send(`<h2>Grab your data from the projects or actions endpoints type /docs/projects for docs</h2>`)
 })
 
-server.use('/docs/:endpoint', (req, res) => {
-    const apiEndpoint = process.env.APIENDPOINT || 'Error';
-    res.status(200).send(`<p>use api/${apiEndpoint} to access ${apiEndpoint}</p>`)
+server.use('/docs/:name', (req, res) => {
+    const endpoint = process.env.APIENDPOINT || 'projects';
+    res.status(200).send(`<p>use api/${endpoint} to access ${req.params.name}</p>`)
 })
 
 //Custom Middleware Functions
