@@ -78,4 +78,22 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+// //validates that a project id exists for that entity
+// function validateProject( req, res, next) {
+//     if (!req.body.id) {
+//       res.status(400).json({ message: 'cannot find project with that id' });
+//     } else {
+//       req.body.project_id = req.project.id
+//       next();
+//     }
+//   };
+  
+// // helper function for validateAction to check if body of request is empty
+//   function isEmpty(obj) {
+//     for (var key in obj) {
+//       if (obj.hasOwnProperty(key)) return false;
+//     }
+//     return true;
+//   }
+
 module.exports = router;
