@@ -20,8 +20,14 @@ server.use(logger());
 server.use('/api/projects', projectsRouter);
 server.use('/api/actions', actionsRouter)
 
+
 server.get('/', (req,res) => {
-    res.send(`<h2>Grab your data from the projects or actions endpoints</h2>`)
+    res.send(`<h2>Grab your data from the projects or actions endpoints type /docs/projects for docs</h2>`)
+})
+
+server.use('/docs/:endpoint', (req, res) => {
+    const apiEndpoint = process.env.APIENDPOINT || 'Error';
+    res.status(200).send(`<p>use api/${apiEndpoint} to access ${apiEndpoint}</p>`)
 })
 
 //Custom Middleware Functions
