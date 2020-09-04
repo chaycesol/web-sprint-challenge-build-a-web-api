@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 });
 
 // Returns Specific Project with Actions by Project ID
-router.get('/:id', (req, res) => {
+router.get('/:id', validateProjectId, (req, res) => {
     Projects.get(req.params.id)
     .then((project) => {
         res.status(200).json(project)
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
 
 
 /* PUT REQUESTS */
-router.put('/:id', (req, res) => {
+router.put('/:id', validateProjectId, (req, res) => {
     if(req.body.name && req.body.description) {
         Projects.update(req.params.id, req.body)
         .then((updatedProject) => {
@@ -79,6 +79,22 @@ router.delete('/:id', (req, res) => {
 })
 
 // //validates that a project id exists for that entity
+function validateProjectId (req, res, next) {
+    const projectId = req.params.id || req.body.project_id;
+    Projects.get(projectId)
+      .then((project) => {
+        if (project) {
+          req.project = project;
+          return next();
+        } else {
+          res.status(400).json({ message: "that is not a valid id" });
+        }
+      })
+      .catch(() => {
+        res.status(500).json({ message: "cant fetch project from db" });
+      });
+  } 
+
 // function validateProject( req, res, next) {
 //     if (!req.body.id) {
 //       res.status(400).json({ message: 'cannot find project with that id' });
